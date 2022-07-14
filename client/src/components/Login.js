@@ -14,7 +14,7 @@ export default function Login({setIsLogin}){
     const loginSubmit = async e => {
         e.preventDefault()
         try {
-            const res = await axios.post('/user/login', {
+            const res = await axios.post('https://Notepad2.docpep.repl.co/user/login', {
                 username: user.username,
                 password: user.password
             })
@@ -22,14 +22,14 @@ export default function Login({setIsLogin}){
             localStorage.setItem('tokenStore', res.data.token)
             setIsLogin(true)
         } catch (err) {
-            err.response.data.message && setErr(err.response.data.message)
+            console.log(err.message)
         }        
     }
 
     const registerSubmit = async e => {
         e.preventDefault()
         try {
-            const res = await axios.post('/user/register', {
+            const res = await axios.post('https://Notepad2.docpep.repl.co/user/register', {
                 username: user.username,
                 email: user.email,
                 password: user.password

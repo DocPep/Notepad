@@ -14,7 +14,7 @@ export default function EditNote() {
         const getNote = async ()=> {
             const token = localStorage.getItem('tokenStore')
             if(id){
-                const res = await axios.get(`/api/notes/${id}`, {
+                const res = await axios.get(`https://Notepad2.docpep.repl.co/api/notes/${id}`, {
                     headers:{Authorization: token}
                 })
                 setNote({
@@ -45,7 +45,7 @@ export default function EditNote() {
                 setErr('Fill out all details')
             }
             else{
-            const res = await axios.put(`/api/notes/${id}`, {
+            const res = await axios.put(`https://Notepad2.docpep.repl.co/api/notes/${id}`, {
                 title: note.title,
                 content: note.content,
                 date: note.date,

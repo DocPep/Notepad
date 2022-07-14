@@ -17,7 +17,7 @@ export default function CreateNote() {
         e.preventDefault()
         const token = localStorage.getItem('tokenStore')
         try {
-            const res = await axios.post('/api/notes', {
+            const res = await axios.post('https://Notepad2.docpep.repl.co/api/notes', {
                 title: note.title,
                 content: note.content,
                 date: note.date

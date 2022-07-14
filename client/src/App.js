@@ -9,8 +9,9 @@ function App() {
 useEffect(()=>{
   const checklogin = async () =>{
     const token = localStorage.getItem('tokenStore')
+    console.log(token)
     if(token){
-      const verified = await axios.get('user/verify', {
+      const verified = await axios.get('https://Notepad2.docpep.repl.co/user/verify', {
         headers:{Authorization: token}
       })
       setIsLogin(verified.data)

@@ -9,7 +9,7 @@ export default function Home() {
     const [token, setToken] = useState('');
 
     const getNotes = async (token) =>{
-        const res = await axios.get('api/notes', {
+        const res = await axios.get('https://Notepad2.docpep.repl.co/api/notes', {
             headers: {Authorization: token}
         })
         console.log(res)
@@ -27,7 +27,7 @@ export default function Home() {
     const deleteNote = async (noteid) => {
         try {
             if (token){
-                await axios.delete(`api/notes/${noteid}`, {
+                await axios.delete(`https://Notepad2.docpep.repl.co/api/notes/${noteid}`, {
                     headers: {Authorization: token}
                 })
                 getNotes(token)
